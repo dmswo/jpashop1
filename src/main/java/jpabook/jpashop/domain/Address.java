@@ -11,4 +11,13 @@ public class Address {
     private String city;
     private String steet;
     private String zipcode;
+
+    protected Address() {
+    }
+
+    public Address(String city, String steet, String zipcode) {
+        this.city = city;
+        this.steet = steet;
+        this.zipcode = zipcode;
+    }
 }

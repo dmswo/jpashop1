@@ -19,12 +19,12 @@ public class MemberService {
     /*회원 가입*/
     @Transactional
     public Long join(Member member) {
-        validateDuplicateMameber(member); //중복 회원 검증
+        validateDuplicateMember(member); //중복 회원 검증
         memberRepository.save(member);
         return member.getId();
     }
 
-    private void validateDuplicateMameber(Member member) {
+    private void validateDuplicateMember(Member member) {
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if(!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 회원입니다.");
